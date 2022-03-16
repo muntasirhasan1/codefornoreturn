@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Audio;  //To reference an audio mixer we need to be using unity engine audio system
+public class OptionMenu : MonoBehaviour
+{
+    public AudioMixer audioMixer;
+
+   //Public to trigger from Slider and Void so that we don't return anything.
+    public void SetVolume(float volume)  //float because we want value with decimal places
+    {
+        audioMixer.SetFloat("volume", volume);
+    }
+
+    public void SetQuality (int qualityIndex)
+    {
+        //QualitySetting to acces quality setting in unity
+        //qualityIndex is the index of each quality for example low it is 0 ,medium it is 1
+        QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetFullscreen(bool isFullscreen) //because our toggle is going to be true or false only.
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+}
