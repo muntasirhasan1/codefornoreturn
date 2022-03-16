@@ -1,0 +1,19 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;  //Use to change scene in Unity.
+public class MainMenu : MonoBehaviour
+{
+    //to call from buttom we need to make the method public
+    public void Playgame()   //To transition to the first level
+    {
+        //Load next level using scene index
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Quitgame()   //To quit the game.
+    {
+        Debug.Log("You closed the game"); //testing if function work as we can't actually quit game inside unity editor
+        Application.Quit();
+    }
+}
